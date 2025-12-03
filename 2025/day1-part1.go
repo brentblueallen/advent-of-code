@@ -8,8 +8,10 @@ import (
 )
 
 func main() {
-	fmt.Println("Howdy")
-	inPath := "./day1-input.txt"
+	inPath := "./day1-example-input.txt"
+	if len(os.Args) > 1 {
+		inPath = os.Args[1]
+	}
 	inFile, err := os.ReadFile(inPath)
 	if err != nil {
 		fmt.Printf("Failed to open file %s: %s", inPath, err)

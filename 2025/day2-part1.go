@@ -9,7 +9,10 @@ import (
 )
 
 func main() {
-	inPath := "./day2-input.txt"
+	inPath := "./day2-example-input.txt"
+	if len(os.Args) > 1 {
+		inPath = os.Args[1]
+	}
 	inFile, err := os.ReadFile(inPath)
 	if err != nil {
 		fmt.Printf("Failed to open file %s: %s", inPath, err)
